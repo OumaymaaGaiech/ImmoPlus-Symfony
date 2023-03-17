@@ -1,0 +1,47 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}Registration{% endblock %}
+
+{% block body %}
+    <div class="page-head">
+        <div class="container">
+            <div class="row">
+                <div class="page-head-content">
+                    <h1 class="page-title"> Enter your informations to create an account   </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="register-area  " style="background-color: rgb(243,240,240); margin-top: 10px;margin-left: 28%;width: 45%;" >
+    <div class="container" >
+        <div class="col-md-6">
+            <div class="box-for overflow">
+                <div class="col-md-12 col-xs-12 login-blocks" >
+    {{ form_start(registrationForm) }}
+                    {{ form_label(registrationForm.fullName,"First Name & Last Name") }}
+                    {{ form_widget(registrationForm.fullName) }}<br>
+                    {{ form_label(registrationForm.role,"Role ") }}{{ '     ' }}{{ form_widget(registrationForm.role) }}<br><br>
+                    {{ form_label(registrationForm.genreUser,"Gender") }}
+                    {{ form_widget(registrationForm.genreUser) }}<br><br>
+                    {{ form_label(registrationForm.email,"Your Email") }}
+                    {{ form_widget(registrationForm.email) }}<br>
+                    {{ form_label(registrationForm.password,"Your Password") }}
+                    {{ form_widget(registrationForm.password) }}
+                    <br>
+                    {{ form_label(registrationForm.region,"Your Region") }}
+                    {{ form_widget(registrationForm.region) }}<br><br>
+                    {{ form_label(registrationForm.municipalite,"Your Municipality") }}
+                    {{ form_widget(registrationForm.municipalite) }}<br>
+                    {{ form_label(registrationForm.telephone,"Your Phone Number") }}
+                    {{ form_widget(registrationForm.telephone) }}<br>
+        {{ form_row(registrationForm.agreeTerms) }}
+
+                    <center> <button type="submit" class="btn" style="background-color: #FDC600">Register</button></center>
+    {{ form_end(registrationForm) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

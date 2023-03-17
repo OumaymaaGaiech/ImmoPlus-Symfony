@@ -1,0 +1,63 @@
+{% extends 'dash.html.twig' %}
+
+
+
+{% block content %}
+
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>actions</th>
+            <th>Fullname</th>
+            <th>Genreuser</th>
+            <th>Email</th>
+            <th>Region</th>
+            <th>Municipalite</th>
+            <th>Telephone</th>
+            <th>Role</th>
+            <th>Adresseagence</th>
+            <th>Jourtravail</th>
+            <th>Heuretravail</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+            <td>
+
+                     <a href="{{ path('app_user_show', {'id': user.id}) }}">show</a>
+                <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
+
+
+                    {% if user.Activated == 'Active' %}
+                        <a href="{{ path('desactiver-user', {'id': user.id}) }}"
+                           class="btn btn-dark text-white" >Bloquer</a>
+                    {% else %}
+                        <a href="{{ path('activer-user', {'id': user.id}) }}"
+                           class="btn btn-pinterest " >Débloquer</a> {% endif %}</td>
+                <td>{{ user.fullname }}</td>
+                <td>{{ user.genreuser }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.region }}</td>
+                <td>{{ user.municipalite }}</td>
+                <td>{{ user.telephone }}</td>
+                <td>{{ user.role }}</td>
+                <td>{{ user.adresseagence }}</td>
+                <td>{{ user.jourtravail }}</td>
+                <td>{{ user.heuretravail }}</td>
+
+
+                    {#  <a href="{{ path('app_user_show', {'id': user.id}) }}">show</a>
+                    <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>#}
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="13">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

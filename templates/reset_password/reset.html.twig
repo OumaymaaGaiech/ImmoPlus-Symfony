@@ -1,0 +1,31 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}Reset your password{% endblock %}
+
+{% block body %}
+<div class="page-head">
+    <div class="container">
+        <div class="row">
+            <div class="page-head-content">
+                <h1 class="page-title"> Enter your Email to Reset you Password    </h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="register-area  " style="background-color: rgb(243,240,240); margin-top: 10px;margin-left: 28%;width: 45%;" >
+    <div class="container" >
+        <div class="col-md-6">
+            <div class="box-for overflow">
+                <div class="col-md-12 col-xs-12 login-blocks" >
+
+
+    {{ form_start(resetForm) }}
+        {{ form_row(resetForm.plainPassword) }}
+        <button class="btn btn-primary">Reset password</button>
+    {{ form_end(resetForm) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
